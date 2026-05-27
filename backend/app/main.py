@@ -5,6 +5,8 @@ from app.api.tasks import router as task_router
 from app.api.memory import router as memory_router
 from app.api.retrieval import router as retrieval_router
 from app.api.competitors import router as competitor_router
+from app.api.ai_generation import router as ai_router
+from app.api.twitter import router as twitter_router
 
 app = FastAPI(
     title="AI Social Growth OS",
@@ -16,6 +18,8 @@ app.include_router(task_router)
 app.include_router(memory_router)
 app.include_router(retrieval_router)
 app.include_router(competitor_router)
+app.include_router(ai_router)
+app.include_router(twitter_router)
 
 @app.get("/")
 async def root():
